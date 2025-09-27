@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://gyh3d5jc4dcg"]
+
+[ext_resource type="Script" uid="uid://b70k77e1bwf54" path="res://scripts/score_ui.gd" id="1_8xhb5"]
+[ext_resource type="FontFile" uid="uid://dnnkqjwiwktrp" path="res://assets/fonts/F25_Bank_Printer.ttf" id="1_l8dn8"]
+
+[node name="ScoreUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8xhb5")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 0
+offset_right = 123.0
+offset_bottom = 40.0
+split_offset = 56
+
+[node name="Score" type="RichTextLabel" parent="HSplitContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_l8dn8")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "0"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PlayerName" type="RichTextLabel" parent="HSplitContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_l8dn8")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "P1"
+vertical_alignment = 1

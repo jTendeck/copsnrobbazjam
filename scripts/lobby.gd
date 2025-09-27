@@ -85,6 +85,8 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 
 func _on_button_pressed() -> void:
 	
+	button_sound.play()
+	
 	if is_hosting:
 		
 		SignalManager.host_game_pressed.emit()
