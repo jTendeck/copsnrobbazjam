@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://th4t1mju5fa8"]
+[gd_scene load_steps=3 format=3 uid="uid://th4t1mju5fa8"]
 
 [ext_resource type="Script" uid="uid://pyo83li22ojx" path="res://scripts/pause_menu.gd" id="1_6tw0m"]
+[ext_resource type="AudioStream" uid="uid://cj7lx70en1t6v" path="res://assets/sound/sfx/basic_button_sound.mp3" id="2_0lmf7"]
 
 [node name="PauseMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,4 +36,8 @@ layout_mode = 2
 focus_mode = 0
 text = "Resume"
 
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0lmf7")
+
 [connection signal="button_up" from="Panel/VSplitContainer/ResumeButton" to="." method="_on_resume_button_button_up"]
+[connection signal="pressed" from="Panel/VSplitContainer/ResumeButton" to="." method="_on_resume_button_pressed"]

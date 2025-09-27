@@ -1,11 +1,24 @@
 extends Control
 
-@onready var game_scene = load("res://scenes/main.tscn").instantiate()
+@onready var button_sound = $ButtonSound
 
 func _on_resume_button_button_up() -> void:
 	
-	SignalManager.resume_game_pressed.emit()
-	
-	get_tree().root.add_child(game_scene)
-	get_tree().current_scene.queue_free()
-	get_tree().current_scene = game_scene
+	self.visible = false
+	get_tree().paused = false
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		toggle_pause()
+				
+func toggle_pause():
+	if get_tree().paused:
+		get_tree().paused = false
+		self.visible = false
+	else:
+		get_tree().paused = true
+		self.visible = true
+
+
+func _on_resume_button_pressed() -> void:
+	button_sound.play()

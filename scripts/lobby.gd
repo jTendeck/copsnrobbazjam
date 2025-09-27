@@ -5,6 +5,8 @@ extends Control
 @onready var line_edit = $Panel/VSplitContainer/HSplitContainer/LineEdit
 @onready var player_join_label = $Panel/PlayerJoinLabel
 @onready var refresh_button = $Panel/RefreshButton
+
+@onready var refresh_sound = $RefreshSound
 @onready var button_sound = $ButtonSound
 @onready var key_sound = load("res://assets/sound/sfx/key_hit.wav")
 
@@ -68,6 +70,7 @@ func _on_refresh_button_pressed() -> void:
 	
 	if refresh_button.visible:
 		
+		refresh_sound.play()
 		line_edit.text = generate_text(6)
 	
 
