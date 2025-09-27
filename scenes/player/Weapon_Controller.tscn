@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b67fhf16gttmb"]
+
+[ext_resource type="Script" uid="uid://ckv76j6iy87k6" path="res://scenes/player/scripts/weapon_controller.gd" id="1_awq37"]
+[ext_resource type="Script" uid="uid://1f6bgy8h5gia" path="res://scenes/player/scripts/weapon.gd" id="2_e6ism"]
+[ext_resource type="PackedScene" uid="uid://b01uuo7kppfr6" path="res://scenes/projectiles/projectile_generic.tscn" id="3_tmxi3"]
+
+[node name="WeaponController" type="Node2D"]
+script = ExtResource("1_awq37")
+
+[node name="Grenade" type="Node2D" parent="."]
+
+[node name="Weapon" type="Node2D" parent="."]
+script = ExtResource("2_e6ism")
+projectile_scene = ExtResource("3_tmxi3")
