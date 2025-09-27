@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ubpjuqm3j1ar"]
+
+[ext_resource type="PackedScene" uid="uid://dea8embamdeuq" path="res://scenes/fog-of-war/fow-player-test.tscn" id="1_au7ri"]
+[ext_resource type="PackedScene" uid="uid://xpm3in0yjujb" path="res://scenes/fog-of-war/vision.tscn" id="2_3yusa"]
+[ext_resource type="Shader" uid="uid://b2ou2mvqmubmk" path="res://shaders/vision-shader.gdshader" id="3_aygct"]
+[ext_resource type="Texture2D" uid="uid://yj312mooarud" path="res://icon.svg" id="4_olriu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_701fk"]
+shader = ExtResource("3_aygct")
+
+[node name="Fow-playground" type="Node2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="YSort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Fow-player-test" parent="YSort" instance=ExtResource("1_au7ri")]
+y_sort_enabled = true
+position = Vector2(405, 351)
+
+[node name="Vision" parent="YSort/Fow-player-test" instance=ExtResource("2_3yusa")]
+
+[node name="Floor" type="TileMapLayer" parent="YSort"]
+
+[node name="Fog-of-war" type="Sprite2D" parent="."]
+light_mask = 2
+z_index = 10
+material = SubResource("ShaderMaterial_701fk")
+position = Vector2(543, 335.5)
+scale = Vector2(9.48438, 6.24219)
+texture = ExtResource("4_olriu")
