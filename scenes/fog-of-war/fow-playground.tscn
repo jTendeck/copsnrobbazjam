@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://dc8pj0pgrfaa7"]
+
+[ext_resource type="Texture2D" uid="uid://hfcoh7x5ra08" path="res://assets/sprites/fow-bg-test.png" id="1_au7ri"]
+[ext_resource type="PackedScene" uid="uid://dea8embamdeuq" path="res://scenes/fog-of-war/fow-player-test.tscn" id="2_aygct"]
+[ext_resource type="Texture2D" uid="uid://cis1lg2856q14" path="res://assets/sprites/fow-wall-test.png" id="4_701fk"]
+[ext_resource type="Texture2D" uid="uid://yj312mooarud" path="res://icon.svg" id="4_olriu"]
+
+[sub_resource type="Gradient" id="Gradient_aygct"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_olriu"]
+gradient = SubResource("Gradient_aygct")
+width = 4000
+height = 4000
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_701fk"]
+polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxd1a"]
+size = Vector2(32, 32)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rtbrd"]
+light_mode = 2
+
+[node name="Fow-playground" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(972.5, 541)
+scale = Vector2(61.7813, 34.8125)
+texture = ExtResource("1_au7ri")
+
+[node name="Fow-player-test" parent="." instance=ExtResource("2_aygct")]
+position = Vector2(362, 507)
+metadata/_edit_group_ = true
+
+[node name="Visibility" type="PointLight2D" parent="Fow-player-test"]
+energy = 0.06
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_olriu")
+
+[node name="Wall1" type="StaticBody2D" parent="."]
+position = Vector2(690, 356)
+scale = Vector2(1, 9.04)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall1"]
+texture = ExtResource("4_701fk")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Wall1"]
+occluder = SubResource("OccluderPolygon2D_701fk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
+shape = SubResource("RectangleShape2D_wxd1a")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2(683, 771)
+scale = Vector2(1, 9.04)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall2"]
+texture = ExtResource("4_701fk")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Wall2"]
+occluder = SubResource("OccluderPolygon2D_701fk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+shape = SubResource("RectangleShape2D_wxd1a")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_rtbrd")
+position = Vector2(968, 685)
+texture = ExtResource("4_olriu")

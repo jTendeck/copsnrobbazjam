@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dea8embamdeuq"]
+
+[ext_resource type="Script" uid="uid://c3bk8p3fb2rln" path="res://scenes/fog-of-war/fow_player_test.gd" id="1_bqvpl"]
+[ext_resource type="Texture2D" uid="uid://yj312mooarud" path="res://icon.svg" id="2_fisqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t866"]
+size = Vector2(130, 130)
+
+[node name="Fow-player-test" type="CharacterBody2D"]
+script = ExtResource("1_bqvpl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fisqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6t866")
