@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfadmm26t7hot"]
+[gd_scene load_steps=7 format=3 uid="uid://dn1qxfjkkvspi"]
 
-[ext_resource type="Script" uid="uid://dbgg7fowffe37" path="res://scenes/ui/main_menu.gd" id="1_c8enf"]
-[ext_resource type="Script" uid="uid://cf0tha3l13guf" path="res://scenes/ui/quit_button.gd" id="1_ph80j"]
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_c8enf"]
+[ext_resource type="Script" path="res://scenes/ui/quit_button.gd" id="1_ph80j"]
 [ext_resource type="FontFile" uid="uid://rpbgfy40kyto" path="res://assets/fonts/Warnet-Crime.ttf" id="2_oxtcp"]
-[ext_resource type="Script" uid="uid://h66f2no7wse" path="res://scenes/ui/play_button.gd" id="3_oxtcp"]
+[ext_resource type="Script" path="res://scenes/ui/play_button.gd" id="3_oxtcp"]
 [ext_resource type="FontFile" uid="uid://c3jcvj2kr0u5b" path="res://assets/fonts/DitherByte-Regular.ttf" id="4_f0x07"]
 [ext_resource type="AudioStream" uid="uid://do8vays7ykq4p" path="res://assets/sound/sfx/ui_sound.mp3" id="6_6rc6a"]
 

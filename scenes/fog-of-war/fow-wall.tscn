@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c27w2cdaho7ap"]
+
+[ext_resource type="Texture2D" uid="uid://cis1lg2856q14" path="res://assets/sprites/fow-wall-test.png" id="1_121n7"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_701fk"]
+polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxd1a"]
+size = Vector2(32, 32)
+
+[node name="Wall1" type="StaticBody2D"]
+scale = Vector2(1, 9.04)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_121n7")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_701fk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wxd1a")
