@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 SignalManager="*res://globals/signal_manager.gd"
 GlobalVariables="*res://globals/global_variables.gd"
 
+[gui]
+
+theme/custom_font="uid://cc8way58njw0x"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
