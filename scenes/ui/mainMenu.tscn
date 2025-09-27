@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://nwtiex81iqke"]
+
+[ext_resource type="Texture2D" uid="uid://c4ixbybhid1wf" path="res://Gemini_Generated_Image_l63u68l63u68l63u.png" id="1_j3ryx"]
+[ext_resource type="FontFile" uid="uid://rpbgfy40kyto" path="res://assets/fonts/Warnet-Crime.ttf" id="2_c8enf"]
+[ext_resource type="Script" uid="uid://b80pvq0m7cbkx" path="res://scenes/ui/quit_button.gd" id="3_c8enf"]
+[ext_resource type="Script" uid="uid://qbunn3l77362" path="res://scenes/ui/play_button.gd" id="3_oxtcp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxtcp"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1157.0
+offset_bottom = 652.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oxtcp")
+
+[node name="Bckgrnd_img" type="Sprite2D" parent="Panel"]
+position = Vector2(571, 327)
+scale = Vector2(0.689453, 0.634766)
+texture = ExtResource("1_j3ryx")
+
+[node name="Play" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 283.0
+offset_right = 215.0
+offset_bottom = 384.0
+theme_override_fonts/font = ExtResource("2_c8enf")
+theme_override_font_sizes/font_size = 41
+text = "Play
+"
+script = ExtResource("3_oxtcp")
+
+[node name="Quit" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 926.0
+offset_top = 291.0
+offset_right = 1133.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("2_c8enf")
+theme_override_font_sizes/font_size = 41
+text = "Quit
+"
+script = ExtResource("3_c8enf")
+
+[connection signal="pressed" from="Panel/Play" to="Panel/Play" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Quit" to="Panel/Quit" method="_on_pressed"]

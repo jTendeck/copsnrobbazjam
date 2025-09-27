@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://lsiigqp50rpt"]
+
+[node name="GunShot" type="CPUParticles2D"]
+gravity = Vector2(20, 0)
+scale_amount_min = 24.5
+scale_amount_max = 24.5
+color = Color(1, 1, 0, 1)
