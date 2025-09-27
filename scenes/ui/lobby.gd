@@ -13,7 +13,7 @@ var is_hosting = false
 
 func _on_host_game_check_box_toggled(toggled_on: bool) -> void:
 	
-	
+	button_sound.play()
 	
 	if toggled_on:
 		
