@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c07sd3ec8v3fh"]
+
+[sub_resource type="Gradient" id="Gradient_0bqfx"]
+offsets = PackedFloat32Array(0.00666667, 0.52)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[node name="Fire" type="CPUParticles2D"]
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 257.37
+initial_velocity_max = 671.51
+scale_amount_min = 21.0
+scale_amount_max = 41.0
+color = Color(1, 1, 0, 1)
+color_ramp = SubResource("Gradient_0bqfx")
