@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cojtstt2kjlgt"]
+
+[ext_resource type="Texture2D" uid="uid://dwwd52w5hvhkm" path="res://assets/images/steel_box.png" id="1_hhikg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cp6e5"]
+size = Vector2(115, 113)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ka5rx"]
+polygon = PackedVector2Array(4, 0, 4, 113, 119, 113, 120, 0)
+
+[node name="SteelBox" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(63, 56.5)
+scale = Vector2(0.226562, 0.220703)
+texture = ExtResource("1_hhikg")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(62.5, 56.5)
+shape = SubResource("RectangleShape2D_cp6e5")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(1, 0)
+occluder = SubResource("OccluderPolygon2D_ka5rx")

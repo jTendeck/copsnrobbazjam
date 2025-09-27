@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdgkja2x15kk4"
-path="res://.godot/imported/refresh_icon.webp-61e3c2cbf65b9bd79788a82fc4804607.ctex"
+uid="uid://dwwd52w5hvhkm"
+path="res://.godot/imported/steel_box.png-3b607f75353409b5f7b364912d311323.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/refresh_icon.webp"
-dest_files=["res://.godot/imported/refresh_icon.webp-61e3c2cbf65b9bd79788a82fc4804607.ctex"]
+source_file="res://assets/images/steel_box.png"
+dest_files=["res://.godot/imported/steel_box.png-3b607f75353409b5f7b364912d311323.ctex"]
 
 [params]
 
