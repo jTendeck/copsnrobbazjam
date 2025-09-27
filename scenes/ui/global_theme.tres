@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://daxxhs0lp4mrr"]
+
+[ext_resource type="FontFile" uid="uid://rpbgfy40kyto" path="res://assets/fonts/Warnet-Crime.ttf" id="1_a0xwb"]
+
+[resource]
+font/fonts/ui_main_font = ExtResource("1_a0xwb")
