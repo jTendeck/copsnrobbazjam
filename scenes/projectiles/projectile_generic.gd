@@ -1,17 +1,18 @@
 extends RigidBody2D
 
 #starting with a hardcoded vector, this direction needs to be set before impulse is called
-@onready var directionVector = Vector2.RIGHT;
+@onready var directionVector = Vector2.ZERO;
 @export var SPEED = 700;
 
 # Called when the node enters the scene tree for the first time.
 # turn off gravity and move it torward vector with speed
 func _ready() -> void:
 	gravity_scale = 0;
+
+#move it torward vector with speed
+func fire(directionVector : Vector2):
 	directionVector = directionVector * SPEED;
 	apply_impulse(directionVector);
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

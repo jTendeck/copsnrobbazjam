@@ -1,17 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://mxn8xp3hx7wg"]
 
 [ext_resource type="PackedScene" uid="uid://b01uuo7kppfr6" path="res://scenes/projectiles/projectile_generic.tscn" id="1_ymel7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymel7"]
-size = Vector2(73, 60)
+[ext_resource type="Script" uid="uid://cxq8545butxhu" path="res://scenes/projectiles/character_body_shooting_example2d.gd" id="2_q300d"]
 
 [node name="ProjectileHitExample" type="Node2D"]
 
 [node name="projectile_generic" parent="." instance=ExtResource("1_ymel7")]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(383, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-scale = Vector2(1.0018, 1)
-shape = SubResource("RectangleShape2D_ymel7")
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_q300d")
