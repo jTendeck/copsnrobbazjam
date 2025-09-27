@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bobwv0hvd6au7"]
+
+[node name="Smoke" type="CPUParticles2D"]
+amount = 100
+emission_shape = 1
+emission_sphere_radius = 67.67
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 1000.0
+radial_accel_min = -100.0
+radial_accel_max = 59.11
+damping_max = 58.3
+angle_min = 104.9
+angle_max = 291.5
+scale_amount_min = 21.0
+scale_amount_max = 48.0
+color = Color(0.641934, 0.641934, 0.641934, 1)
