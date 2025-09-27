@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b01uuo7kppfr6"]
+
+[ext_resource type="Texture2D" uid="uid://dvusktyi5srfq" path="res://assets/sprites/circle.png" id="1_6v7c4"]
+[ext_resource type="Script" uid="uid://dei2rclce3co2" path="res://scenes/projectiles/projectile_generic.gd" id="1_vq5ld"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vq5ld"]
+radius = 22.0
+
+[node name="projectile_generic" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_vq5ld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1.00462, 1)
+shape = SubResource("CircleShape2D_vq5ld")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_6v7c4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
