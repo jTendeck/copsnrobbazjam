@@ -8,6 +8,8 @@ extends Control
 @onready var button_sound = $ButtonSound
 @onready var key_sound = load("res://assets/sound/sfx/key_hit.wav")
 
+@onready var hosted_game_scene = load("res://scenes/ui/placeholder_hosted.tscn").instantiate()
+@onready var joined_game_scene = load("res://scenes/ui/placeholder_joined_lobby.tscn").instantiate()
 var is_hosting = false
 
 
@@ -89,8 +91,15 @@ func _on_button_pressed() -> void:
 	
 	if is_hosting:
 		
+		get_tree().root.add_child(hosted_game_scene)
+		get_tree().current_scene.queue_free()
+		get_tree().current_scene = hosted_game_scene
+		
 		SignalManager.host_game_pressed.emit()
 		
 	else:
 		
+		get_tree().root.add_child(joined_game_scene)
+		get_tree().current_scene.queue_free()
+		get_tree().current_scene = joined_game_scene
 		SignalManager.join_game_pressed.emit()

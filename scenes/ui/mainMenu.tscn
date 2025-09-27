@@ -1,4 +1,6 @@
-[gd_scene load_steps=0 format=3 uid="uid://bij44d2g6n3x7"]
+[gd_scene load_steps=2 format=3 uid="uid://cbbfpylemd7j3"]
+
+[ext_resource type="Script" uid="uid://dy8p3aq02high" path="res://main_menu.gd" id="1_ph80j"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,18 +9,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ph80j")
 
-[node name="MenuButton" type="MenuButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.652
-anchor_bottom = 0.695
-offset_left = 6.0
-offset_top = 13.0
-offset_right = -20.104
-offset_bottom = -85.36
-grow_horizontal = 2
-grow_vertical = 2
-switch_on_hover = true
+[node name="StartGame" type="Button" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 302.0
+offset_right = 649.0
+offset_bottom = 369.0
+text = "Start"
+
+[connection signal="button_up" from="StartGame" to="." method="_on_start_game_button_up"]

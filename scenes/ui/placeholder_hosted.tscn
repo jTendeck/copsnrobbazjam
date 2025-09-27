@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cw6gq3olq1b1v"]
+
+[node name="PlaceholderHosted" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 490.0
+offset_top = 368.0
+offset_right = 741.0
+offset_bottom = 448.0
+text = "LOBBY HOSTED :)"
