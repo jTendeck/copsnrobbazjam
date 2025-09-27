@@ -78,7 +78,6 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 	player.play()
 	player.connect("finished", Callable(player, "queue_free"))
 	
-	print("Sound Played")
 
 	line_edit.text = new_text.to_upper()
 	line_edit.caret_column = new_text.length() 
