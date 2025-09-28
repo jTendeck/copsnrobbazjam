@@ -2,6 +2,7 @@ extends Node
 
 var current_player_number = 4
 
+#bool is var is_robber
 var player1 = Player.new(false)
 var player2 = Player.new(false)
 var player3 = Player.new(true)
@@ -25,6 +26,7 @@ class Player:
 	var player_controls : CharacterBody2D
 	
 	var is_robber : bool
+	
 	
 	func _init(_is_robber: bool) -> void:
 		is_robber = _is_robber
