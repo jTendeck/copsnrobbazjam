@@ -14,12 +14,21 @@ func _process(delta: float) -> void:
 func shoot():
 	print("firing projectile")
 	var new_projectile = projectile_scene.instantiate();
-	add_child(new_projectile);
-	new_projectile.position = position;
-	#get vector to fire towards
-	var fire_vector = Vector2.RIGHT;
+	
+	#make a new scene at the root of the tree for just the currently fired projectile.
+	get_tree().current_scene.add_child(new_projectile);
+	
+	#global transform for the parent object (should be the player);
+	var forward_vector_global = get_global_transform().x;
+	
+	#rotate projectile to match player is looking at
+	new_projectile.look_at(forward_vector_global);
+	
+	new_projectile.position = get_parent().global_position + (100 * forward_vector_global);
+	
+	
 	#call fire on the projectile instance
-	new_projectile.fire(fire_vector);
+	new_projectile.fire(forward_vector_global);
 	
 	#Profit???
 	pass;

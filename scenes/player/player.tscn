@@ -4,20 +4,18 @@
 
 [sub_resource type="Gradient" id="Gradient_sh265"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4flbx"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8afob"]
 gradient = SubResource("Gradient_sh265")
 fill_to = Vector2(1, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(64, 64)
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Player2D" type="CharacterBody2D" parent="."]
+[node name="Player2D" type="CharacterBody2D"]
 script = ExtResource("1_4flbx")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player2D"]
-texture = SubResource("GradientTexture2D_4flbx")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_8afob")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2D"]
-shape = SubResource("RectangleShape2D_sh265")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dovo2")

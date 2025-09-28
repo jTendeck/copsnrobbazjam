@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ckv76j6iy87k6" path="res://scenes/player/scripts/weapon_controller.gd" id="1_awq37"]
 [ext_resource type="Script" uid="uid://1f6bgy8h5gia" path="res://scenes/player/scripts/weapon.gd" id="2_e6ism"]
-[ext_resource type="PackedScene" uid="uid://b01uuo7kppfr6" path="res://scenes/projectiles/projectile_generic.tscn" id="3_tmxi3"]
+[ext_resource type="PackedScene" uid="uid://dhs6vho4gb45p" path="res://scenes/projectiles/projectile_gun.tscn" id="3_tmxi3"]
 
 [node name="WeaponController" type="Node2D"]
 script = ExtResource("1_awq37")

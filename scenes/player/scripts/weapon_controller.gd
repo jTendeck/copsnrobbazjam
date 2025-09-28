@@ -1,4 +1,8 @@
 extends Node2D
+
+#this weapon controller should be placed under the player node in the scene tree.
+#If it isn't under the player node IT WILL BREAK
+
 @onready var parent = get_parent();
 #Getting grenade and weapon nodes.
 @onready var node_weapon = get_node("Weapon");
