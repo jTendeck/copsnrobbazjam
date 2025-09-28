@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://nwtiex81iqke"]
+[gd_scene load_steps=7 format=3 uid="uid://nwtiex81iqke"]
 
 [ext_resource type="Script" uid="uid://bdffeph3jjdwv" path="res://scenes/ui/main_menu.gd" id="1_6rc6a"]
 [ext_resource type="Texture2D" uid="uid://c4ixbybhid1wf" path="res://Gemini_Generated_Image_l63u68l63u68l63u.png" id="1_j3ryx"]
 [ext_resource type="FontFile" uid="uid://rpbgfy40kyto" path="res://assets/fonts/Warnet-Crime.ttf" id="2_c8enf"]
+[ext_resource type="AudioStream" uid="uid://c0q35cf37rw47" path="res://assets/sound/music/Menu_Music.mp3" id="5_f0x07"]
 [ext_resource type="AudioStream" uid="uid://d07vkverqn3r7" path="res://assets/sound/sfx/click_sound.mp3" id="6_ceogi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxtcp"]
@@ -117,6 +118,10 @@ vertical_alignment = 1
 
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ceogi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_f0x07")
+autoplay = true
 
 [connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/Play" to="Panel/Play" method="_on_pressed"]
