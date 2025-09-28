@@ -11,9 +11,7 @@ config_version=5
 [application]
 
 config/name="CopsNRobbaz"
-
 run/main_scene="uid://bfadmm26t7hot"
-
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
