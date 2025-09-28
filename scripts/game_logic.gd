@@ -2,15 +2,15 @@ extends Node
 
 var timer = Timer
 
-@onready var countdown = $Countdown
+@onready var countdown = $UiOverlay/CanvasLayer/Countdown
 
 @onready var game_over_screen = load("res://scenes/ui/Game_over.tscn").instantiate()
-@onready var pause_menu = $PauseMenu
+@onready var pause_menu = $UiOverlay/CanvasLayer/PauseMenu
 
-@onready var score_ui_p1 = $ScoreUIP1
-@onready var score_ui_p2 = $ScoreUIP2
-@onready var score_ui_p3 = $ScoreUIP3
-@onready var score_ui_p4 = $ScoreUIP4
+@onready var score_ui_p1 = $UiOverlay/CanvasLayer/Scores/ScoreUIP1
+@onready var score_ui_p2 = $UiOverlay/CanvasLayer/Scores/ScoreUIP2
+@onready var score_ui_p3 = $UiOverlay/CanvasLayer/Scores/ScoreUIP3
+@onready var score_ui_p4 = $UiOverlay/CanvasLayer/Scores/ScoreUIP4
 
 
 func _ready() -> void:
