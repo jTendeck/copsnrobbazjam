@@ -59,5 +59,4 @@ func _on_player_hit(player: GlobalVariables.Player, damage: int) -> void:
 	player.health -= damage
 	
 	if player.health <= 0:
-		#kill player
-		pass
+		SignalManager.emit_signal("kill_player",player)
