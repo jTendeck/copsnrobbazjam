@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://lsiigqp50rpt"]
+[gd_scene format=3 uid="uid://lsiigqp50rpt"]
 
 [node name="GunShot" type="CPUParticles2D"]
 gravity = Vector2(20, 0)
