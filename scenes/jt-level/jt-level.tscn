@@ -12,8 +12,10 @@ script = ExtResource("1_apduk")
 position = Vector2(292, 281)
 
 [node name="MoneyBag" parent="." instance=ExtResource("3_ayujx")]
-position = Vector2(1466, 476)
+position = Vector2(1190, 498)
 
 [node name="Getaway-car" parent="." instance=ExtResource("4_efifl")]
 position = Vector2(402, 879)
 rotation = -0.63879
+
+[connection signal="tree_exiting" from="MoneyBag" to="." method="_on_money_bag_tree_exiting"]

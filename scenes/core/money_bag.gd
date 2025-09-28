@@ -13,6 +13,7 @@ func _on_money_dropped(money_bag: MoneyBag):
 	if (money_bag == self):
 		being_carried = false
 		carrier = null
+		print("recognizing self!")
 
 	
 func _on_money_picked_up(by: JtPlayer, moneybag: MoneyBag):
