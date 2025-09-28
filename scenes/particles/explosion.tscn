@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dbgi0i8j2pa5o"]
+
+[node name="Explosion" type="CPUParticles2D"]
+amount = 194
+emission_shape = 1
+emission_sphere_radius = 69.52
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 1000.0
+damping_max = 58.3
+angle_min = 104.0
+angle_max = 291.0
+scale_amount_min = 21.0
+scale_amount_max = 41.0
+color = Color(1, 1, 0, 1)
