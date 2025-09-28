@@ -90,6 +90,8 @@ func _on_button_pressed() -> void:
 	
 	button_sound.play()
 	
+	await button_sound.finished
+	
 	if is_hosting:
 		
 		get_tree().root.add_child(hosted_game_scene)
