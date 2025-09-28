@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var buttonSound = $click
 
-@onready var lobby_menu = preload("res://scenes/ui/lobby.tscn")
+@onready var lobby_menu = preload("res://scenes/main.tscn")
 
 func _ready() -> void:
 	pass
