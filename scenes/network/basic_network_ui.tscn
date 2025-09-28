@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bltubbetwfaih"]
+[gd_scene load_steps=2 format=3 uid="uid://dfgs024vufg4y"]
 
-[ext_resource type="Script" uid="uid://efhikpr87byj" path="res://scenes/network/basic_network_ui.gd" id="1_ffoxd"]
+[ext_resource type="Script" path="res://scenes/network/basic_network_ui.gd" id="1_ffoxd"]
 
 [node name="BasicNetworkUi" type="Control"]
 layout_mode = 3
