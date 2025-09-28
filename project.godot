@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 SignalManager="*res://globals/signal_manager.gd"
 GlobalVariables="*res://globals/global_variables.gd"
 Network="*res://globals/network.gd"
+MainMusicPlayer="*res://globals/MainMusicPlayer.tscn"
 
 [display]
 

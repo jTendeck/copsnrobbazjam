@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://bd2h4b6xqq3t2"]
+[gd_scene load_steps=2 format=3 uid="uid://bd2h4b6xqq3t2"]
+
+[ext_resource type="AudioStream" uid="uid://bksg1yavfmgcg" path="res://assets/sound/music/maze.mp3" id="1_o5s7v"]
 
 [node name="MainMusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_o5s7v")
+autoplay = true
+parameters/looping = true
