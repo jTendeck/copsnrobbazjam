@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmgpg1wl5w4l5"]
+[gd_scene load_steps=6 format=3 uid="uid://6a3l2cjve3ro"]
 
-[ext_resource type="PackedScene" uid="uid://bltubbetwfaih" path="res://scenes/network/basic_network_ui.tscn" id="1_dwygo"]
+[ext_resource type="PackedScene" uid="uid://copx1dgqgj1su" path="res://scenes/network/basic_network_ui.tscn" id="1_dwygo"]
 [ext_resource type="Texture2D" uid="uid://hfcoh7x5ra08" path="res://assets/sprites/fow-bg-test.png" id="1_rl2cl"]
 [ext_resource type="Script" path="res://scenes/network/multiplayer_spawner.gd" id="2_0ltwk"]
 [ext_resource type="PackedScene" uid="uid://dea8embamdeuq" path="res://scenes/fog-of-war/fow-player-test.tscn" id="3_0ltwk"]
-[ext_resource type="PackedScene" uid="uid://c27w2cdaho7ap" path="res://scenes/fog-of-war/fow-wall.tscn" id="5_x7tpl"]
+[ext_resource type="PackedScene" path="res://scenes/fog-of-war/fow-wall.tscn" id="5_x7tpl"]
 
 [node name="NetworkPlayground" type="Node"]
 

@@ -15,6 +15,8 @@ var timer = Timer
 
 func _ready() -> void:
 	
+	SignalManager.money_delivered.connect(_on_money_delivered)
+	
 	pause_menu.visible = false
 	
 	#this  is gross
@@ -68,3 +70,12 @@ func _on_player_hit(player: GlobalVariables.Player, damage: int) -> void:
 	
 	if player.health <= 0:
 		SignalManager.emit_signal("kill_player",player)
+
+
+func _on_money_delivered(by: JtPlayer):
+	
+	GlobalVariables.players[1].score += GlobalVariables.point_values["treasure"]
+	GlobalVariables.players[3].score += GlobalVariables.point_values["treasure"]
+	
+	score_ui_p2.update_score()
+	score_ui_p4.update_score()
