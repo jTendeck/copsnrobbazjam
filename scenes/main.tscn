@@ -9,8 +9,91 @@
 script = ExtResource("1_o5qli")
 
 [node name="Jt-level" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(427, 182)
 
-[node name="Node2D" parent="." instance=ExtResource("7_o6xl0")]
-position = Vector2(0, 2)
+[node name="MoneyBag" parent="Jt-level" index="1"]
+position = Vector2(1165, 277)
+
+[node name="Getaway-car" parent="Jt-level" index="2"]
+z_index = -2
+position = Vector2(956, 4933)
+rotation = -1.66277
+
+[node name="tilemap" parent="Jt-level" instance=ExtResource("7_o6xl0")]
+z_index = -2
+position = Vector2(-427, -180)
+scale = Vector2(2.48, 2.48)
+
+[node name="money_spawns" type="Node2D" parent="Jt-level/tilemap"]
+
+[node name="spawn1" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(1660.08, 801.21)
+
+[node name="spawn2" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(1640.73, 208.871)
+
+[node name="spawn3" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(188.71, 314.516)
+
+[node name="spawn4" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(192.742, 662.903)
+
+[node name="spawn5" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(212.097, 1282.26)
+
+[node name="spawn6" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(784.678, 833.468)
+
+[node name="spawn7" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(784.678, 431.049)
+
+[node name="spawn8" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(1368.95, 876.21)
+
+[node name="spawn9" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(1392.34, 338.307)
+
+[node name="spawn10" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(1051.61, 357.661)
+
+[node name="spawn11" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(1376.61, 1302.02)
+
+[node name="spawn12" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(993.549, 1456.86)
+
+[node name="spawn13" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(552.016, 1893.55)
+
+[node name="spawn14" type="Node2D" parent="Jt-level/tilemap/money_spawns"]
+position = Vector2(1328.23, 2144.36)
 
 [node name="UiOverlay" parent="." instance=ExtResource("4_jyhfs")]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
+
+[node name="ScoreUIP1" parent="UiOverlay/CanvasLayer/Scores" index="0"]
+metadata/player_num = 1
+
+[node name="ScoreUIP2" parent="UiOverlay/CanvasLayer/Scores" index="1"]
+offset_left = 1752.0
+offset_top = 20.0
+offset_right = 1752.0
+offset_bottom = 20.0
+metadata/player_num = 2
+
+[node name="ScoreUIP3" parent="UiOverlay/CanvasLayer/Scores" index="2"]
+metadata/player_num = 3
+
+[node name="ScoreUIP4" parent="UiOverlay/CanvasLayer/Scores" index="3"]
+offset_left = 1754.0
+offset_top = 54.0
+offset_right = 1754.0
+offset_bottom = 54.0
+metadata/player_num = 4
+
+[editable path="Jt-level"]
+[editable path="Jt-level/tilemap"]
+[editable path="UiOverlay"]

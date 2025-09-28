@@ -2,6 +2,7 @@ extends Node2D
 
 
 @onready var money_bag = $MoneyBag
+@onready var money_spawns = $tilemap/money_spawns.get_children()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,7 +42,7 @@ func _on_spawn_scene(scene: PackedScene, location: Vector2):
 		
 func _on_money_delivered(by: JtPlayer):
 	
-	money_bag.position = random_screen_position()
+	money_bag.position = money_spawns.pick_random().position
 	SignalManager.money_dropped.emit(money_bag)
 	money_bag.call_deferred("reparent", self)
 	print("Money delivered by : " + by.name + "\nNew Position: " + str(money_bag.position))

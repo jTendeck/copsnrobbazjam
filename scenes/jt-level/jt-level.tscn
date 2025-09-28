@@ -11,6 +11,8 @@ script = ExtResource("1_apduk")
 [node name="JtRobber" parent="." instance=ExtResource("1_pm0wv")]
 position = Vector2(292, 281)
 
+[node name="Camera2D" type="Camera2D" parent="JtRobber"]
+
 [node name="MoneyBag" parent="." instance=ExtResource("3_ayujx")]
 position = Vector2(1190, 498)
 
