@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2xa1luw6ekuv"]
+[gd_scene load_steps=6 format=3 uid="uid://b2xa1luw6ekuv"]
 
 [ext_resource type="Script" uid="uid://c7o6fu6fkpf7m" path="res://scenes/player/scripts/player_2d.gd" id="1_4flbx"]
 
@@ -11,6 +11,14 @@ fill_to = Vector2(1, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(64, 64)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8afob"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
 [node name="Player2D" type="CharacterBody2D"]
 script = ExtResource("1_4flbx")
 
@@ -19,3 +27,6 @@ texture = SubResource("GradientTexture2D_8afob")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dovo2")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_8afob")
