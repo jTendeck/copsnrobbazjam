@@ -37,11 +37,7 @@ var mags : Array
 func _ready():
 	reload_timer.wait_time = reload_time
 	shoot_cooldown_timer.wait_time = time_between_shots
-	if number_of_mags <= 0:
-		number_of_mags = 1
-	
-	mags.resize(number_of_mags)
-	mags.fill(projectiles_per_mag)
+	refresh_ammo()
 
 func _process(_delta):
 	if mags[current_mag_index] <= 0 or !(can_fire and firing):
@@ -90,7 +86,18 @@ func reload():
 	if !can_reload:
 		can_fire = true
 		return
+	if !reload_timer.is_stopped():
+		return
 	reload_timer.start()
+
+func refresh_ammo():
+	can_fire = true
+	stop_timers()
+	current_mag_index = 0
+	if number_of_mags <= 0:
+		number_of_mags = 1
+	mags.resize(number_of_mags)
+	mags.fill(projectiles_per_mag)
 
 
 func add_mag(projectiles : int = -1):
@@ -100,3 +107,10 @@ func add_mag(projectiles : int = -1):
 
 func add_ammo_to_current_mag(amount : int):
 	mags[current_mag_index] += amount
+	
+func stop_timers():
+	shoot_cooldown_timer.stop()
+	reload_timer.stop()
+	
+	
+	

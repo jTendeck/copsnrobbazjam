@@ -38,11 +38,11 @@ func start_client() -> void:
 	print("Client started, connecting to: ", IP_ADDRESS)
 
 # --- Signal Callbacks ---
-
 func _on_peer_connected(id: int):
 	print(str(id), " connected.")
-	emit_signal("player_connected", id)
+	SignalManager.player_connected.emit("player_connected", id)
+
 
 func _on_peer_disconnected(id: int):
 	print(str(id), " disconnected.")
-	emit_signal("player_disconnected", id)
+	SignalManager.player_disconnected.emit("player_connected", id)

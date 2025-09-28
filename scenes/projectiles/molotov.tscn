@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://48hjk77flwlx"]
+[gd_scene load_steps=6 format=3 uid="uid://48hjk77flwlx"]
 
 [ext_resource type="Script" uid="uid://vffeae0w5sc4" path="res://scenes/projectiles/molotov.gd" id="1_1lrit"]
 [ext_resource type="PackedScene" uid="uid://qnnv5e2twbeh" path="res://scenes/projectiles/molotov_explosion.tscn" id="2_gcm8l"]
 [ext_resource type="Texture2D" uid="uid://mit1uawnteo3" path="res://assets/sprites/molotov.png" id="2_mo2di"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mo2di"]
+light_mode = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1lrit"]
 radius = 17.0294
@@ -16,6 +19,7 @@ explosion_scene = ExtResource("2_gcm8l")
 metadata/_custom_type_script = "uid://r5jcd10ukniy"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_mo2di")
 texture = ExtResource("2_mo2di")
 
 [node name="ExplodeTimer" type="Timer" parent="."]

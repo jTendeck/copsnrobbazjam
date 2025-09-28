@@ -1,7 +1,10 @@
 extends Node2D
 
+@export var robber_scene : PackedScene
+@export var police_scene : PackedScene
 
-@onready var money_bag = $MoneyBag
+@onready var money_bag: MoneyBag = $MoneyBag
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +13,9 @@ func _ready():
 	SignalManager.player_hit.connect(_on_player_hit)
 	SignalManager.spawn_scene.connect(_on_spawn_scene)
 	SignalManager.money_delivered.connect(_on_money_delivered)
+	SignalManager.player_connected.connect(_on_player_connected)
+	
+	
 
 func _on_player_fire(_projectile_owner: JtPlayer, projectile: PackedScene, location: Vector2, angle: float, velocity: Vector2) -> void:
 	var proj: Node = projectile.instantiate()
@@ -38,15 +44,14 @@ func _on_spawn_scene(scene: PackedScene, location: Vector2):
 		n2.position = location
 		print("spawned " + n2.name + " at " + str(n2.position))
 		add_child(n2)
-		
+
+
 func _on_money_delivered(by: JtPlayer):
-	
 	money_bag.position = random_screen_position()
 	SignalManager.money_dropped.emit(money_bag)
 	money_bag.call_deferred("reparent", self)
 	print("Money delivered by : " + by.name + "\nNew Position: " + str(money_bag.position))
 		
-
 
 func remove_and_clone(obj: Node2D, new_position : Vector2 ) -> void:
 	var clone = obj.duplicate()
@@ -60,3 +65,22 @@ func random_screen_position() -> Vector2:
 	var x = randf_range(0, viewport_size.x)
 	var y = randf_range(0, viewport_size.y)
 	return Vector2(x, y)
+
+
+var spawn_cop: bool
+func _on_player_connected(id: int) -> void:
+	if (GlobalVariables.all_players.size() >= GlobalVariables.MAX_PLAYERS):
+		print("Too many players; unable to join!")
+		return
+	var player : JtPlayer
+	if (spawn_cop):
+		player = police_scene.instantiate()
+	else:
+		player = robber_scene.instantiate()
+	spawn_cop = !spawn_cop
+	player.name = str(id)
+	player.enabled = false
+	GlobalVariables.add_player(player)
+	
+	
+

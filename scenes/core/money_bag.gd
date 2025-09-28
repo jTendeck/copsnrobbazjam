@@ -11,6 +11,7 @@ func _ready() -> void:
 	
 func _on_money_dropped(money_bag: MoneyBag):
 	if (money_bag == self):
+		rotation = 0
 		being_carried = false
 		carrier = null
 		print("recognizing self!")
@@ -33,3 +34,6 @@ func _on_win_timer_timeout():
 
 func _on_area_exited(area:Area2D):
 	win_timer.stop()
+	
+func drop():
+	SignalManager.money_dropped.emit(carrier)

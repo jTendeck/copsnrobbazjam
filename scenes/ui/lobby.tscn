@@ -1,11 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dc6u4ps0lybw7"]
+[gd_scene load_steps=6 format=3 uid="uid://dc6u4ps0lybw7"]
 
 [ext_resource type="Script" uid="uid://cix5nyv8rjygg" path="res://scripts/lobby.gd" id="1_6oakf"]
 [ext_resource type="StyleBox" uid="uid://bad845jm2uoxr" path="res://assets/ui/new_style_box_flat.tres" id="1_bthuv"]
 [ext_resource type="FontFile" uid="uid://cc8way58njw0x" path="res://assets/fonts/F25_Bank_Printer.ttf" id="2_efll3"]
-[ext_resource type="Texture2D" uid="uid://da11osjds30xj" path="res://assets/images/refresh_icon.png" id="3_5t5el"]
-[ext_resource type="AudioStream" uid="uid://dqf4styybksmx" path="res://assets/sound/sfx/basic_button_sound.mp3" id="4_2rbxb"]
-[ext_resource type="AudioStream" uid="uid://cyondyc4n0f0x" path="res://assets/sound/sfx/refresh_sound.wav" id="5_rqagm"]
+[ext_resource type="AudioStream" uid="uid://7cectjb28p7s" path="res://assets/sound/sfx/basic_button_sound.mp3" id="4_2rbxb"]
 
 [sub_resource type="Theme" id="Theme_5t5el"]
 CheckBox/styles/focus = ExtResource("1_bthuv")
@@ -95,7 +93,6 @@ scale = Vector2(0.56, 0.56)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(0.531051, 0.531051, 0.531051, 1)
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-icon = ExtResource("3_5t5el")
 flat = true
 icon_alignment = 1
 
@@ -104,7 +101,6 @@ stream = ExtResource("4_2rbxb")
 max_polyphony = 5
 
 [node name="RefreshSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_rqagm")
 
 [connection signal="toggled" from="Panel/HostGameCheckBox" to="." method="_on_host_game_check_box_toggled"]
 [connection signal="text_changed" from="Panel/VSplitContainer/HSplitContainer/LineEdit" to="." method="_on_line_edit_text_changed"]

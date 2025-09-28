@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbbfpylemd7j3"]
+[gd_scene load_steps=5 format=3 uid="uid://dn1qxfjkkvspi"]
 
 [ext_resource type="Script" uid="uid://dwm44fh5652tk" path="res://scripts/main_menu.gd" id="1_6rc6a"]
-[ext_resource type="Texture2D" uid="uid://dbqragtoms63w" path="res://assets/images/Heat_Street_Title_Screen_Screenshot.png" id="1_j3ryx"]
-[ext_resource type="AudioStream" uid="uid://dqf4styybksmx" path="res://assets/sound/sfx/basic_button_sound.mp3" id="3_oxtcp"]
+[ext_resource type="Texture2D" uid="uid://ccejgycwfdd7m" path="res://assets/images/Heat_Street_Title_Screen_Screenshot.png" id="1_j3ryx"]
+[ext_resource type="AudioStream" uid="uid://7cectjb28p7s" path="res://assets/sound/sfx/basic_button_sound.mp3" id="3_oxtcp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxtcp"]
 bg_color = Color(0, 0, 0, 1)
