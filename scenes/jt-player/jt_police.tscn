@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqt76n1duuxlr"]
+
+[ext_resource type="Script" uid="uid://hsh5qogtx5jk" path="res://scenes/jt-player/jt_player.gd" id="1_dc0tp"]
+[ext_resource type="Texture2D" uid="uid://dgt4k4310tygf" path="res://assets/sprites/police.png" id="2_yhm52"]
+[ext_resource type="PackedScene" uid="uid://ccc7fuj4v6mge" path="res://scenes/projectiles/weapon_component.tscn" id="3_pumlm"]
+[ext_resource type="PackedScene" uid="uid://6nps6us7vogw" path="res://scenes/projectiles/bullet.tscn" id="4_g0dee"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fpss"]
+radius = 28.0
+height = 128.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ruceb"]
+radius = 23.0
+height = 120.0
+
+[node name="JtPolice" type="CharacterBody2D" node_paths=PackedStringArray("primary_weapon", "hurt_box", "fire_hurt_timer", "camera_follow_pos")]
+z_index = 1
+collision_mask = 13
+script = ExtResource("1_dc0tp")
+health = 5
+player_type = 1
+non_aiming_walk_speed = 500.0
+accelerate_walk_rate = 2000.0
+decelerate_walk_rate = 1800.0
+primary_weapon = NodePath("PrimaryWeapon")
+hurt_box = NodePath("Hurtbox")
+fire_hurt_timer = NodePath("FireHurtTimer")
+camera_follow_pos = NodePath("CameraFollowPos")
+metadata/_custom_type_script = "uid://hsh5qogtx5jk"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yhm52")
+offset = Vector2(31.345, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5fpss")
+
+[node name="ShootLocation" type="Marker2D" parent="."]
+position = Vector2(107, 0)
+
+[node name="PrimaryWeapon" parent="." node_paths=PackedStringArray("fire_location", "shooter") instance=ExtResource("3_pumlm")]
+projectile = ExtResource("4_g0dee")
+fire_location = NodePath("../ShootLocation")
+projectile_speed = 4000.0
+time_between_shots = 0.1
+reload_time = 1.3
+projectiles_per_mag = 15
+shooter = NodePath("..")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape2D_ruceb")
+
+[node name="FireHurtTimer" type="Timer" parent="."]
+wait_time = 0.75
+
+[node name="CameraFollowPos" type="Marker2D" parent="."]
+position = Vector2(100, 0)
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_hit"]
+[connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_body_exited"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_hit"]
+[connection signal="body_exited" from="Hurtbox" to="." method="_on_hurtbox_body_exited"]
+[connection signal="timeout" from="FireHurtTimer" to="." method="_on_fire_hurt_timer_timeout"]

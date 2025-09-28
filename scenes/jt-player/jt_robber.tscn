@@ -18,7 +18,7 @@ height = 120.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6loi"]
 radius = 135.148
 
-[node name="JtRobber" type="CharacterBody2D" node_paths=PackedStringArray("primary_weapon", "secondary_weapon", "hurt_box", "fire_hurt_timer", "money_carry_location")]
+[node name="JtRobber" type="CharacterBody2D" node_paths=PackedStringArray("primary_weapon", "secondary_weapon", "hurt_box", "fire_hurt_timer", "money_carry_location", "camera_follow_pos")]
 z_index = 1
 collision_mask = 13
 script = ExtResource("1_otjgg")
@@ -30,6 +30,7 @@ secondary_weapon = NodePath("SecondaryWeapon")
 hurt_box = NodePath("Hurtbox")
 fire_hurt_timer = NodePath("FireHurtTimer")
 money_carry_location = NodePath("Money-picker-upper/Marker2D")
+camera_follow_pos = NodePath("CameraFollow")
 metadata/_custom_type_script = "uid://hsh5qogtx5jk"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -76,6 +77,9 @@ position = Vector2(-41, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Money-picker-upper"]
 shape = SubResource("CircleShape2D_a6loi")
+
+[node name="CameraFollow" type="Marker2D" parent="."]
+position = Vector2(100, 0)
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_hit"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_body_exited"]
