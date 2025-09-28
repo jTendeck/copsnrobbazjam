@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1a2swrcd4ybw"]
+
+[ext_resource type="Texture2D" uid="uid://csiiofo64bgyj" path="res://Cyberpunk style/building_tiles_pack/small/building_03_small_l.png" id="1_kss5x"]
+[ext_resource type="Texture2D" uid="uid://deuqyo26j0wd3" path="res://Cyberpunk style/building_tiles_pack/medium/building_06_medium_warehouse.png" id="2_8yano"]
+[ext_resource type="Texture2D" uid="uid://c31a3sklv0rpx" path="res://Cyberpunk style/building_tiles_pack/medium/building_08_medium_commercial.png" id="3_d6dgv"]
+[ext_resource type="Texture2D" uid="uid://qfm3o5tdc7fg" path="res://Cyberpunk style/building_tiles_pack/large/building_10_large_industrial.png" id="4_h70qh"]
+[ext_resource type="Texture2D" uid="uid://dis3sglre2fdm" path="res://Cyberpunk style/building_tiles_pack/large/building_12_large_mixed.png" id="5_r02kg"]
+[ext_resource type="Texture2D" uid="uid://saqefwvtpa8o" path="res://Cyberpunk style/building_tiles_pack/large/building_11_large_mall.png" id="6_6fsc5"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p7cra"]
+polygon = PackedVector2Array(855, 745, 1115, 748, 1117, 932, 861, 932)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hwck0"]
+polygon = PackedVector2Array(262, 966, 700, 968, 700, 1173, 264, 1171)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tuscp"]
+polygon = PackedVector2Array(57, 1848, 306, 1850, 306, 1874, 329, 1871, 326, 1837, 334, 1837, 334, 1866, 360, 1866, 360, 1842, 376, 1842, 376, 1863, 399, 1863, 412, 1842, 425, 1850, 433, 1871, 448, 1892, 453, 2226, 62, 2224)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u0dq1"]
+polygon = PackedVector2Array(1558, 1381, 1566, 1492, 1442, 1490, 1444, 1617, 1574, 1619, 1571, 1721, 1675, 1728, 1678, 1617, 1794, 1617, 1792, 1487, 1683, 1490, 1683, 1378)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7gk35"]
+polygon = PackedVector2Array(46, 1427, 88, 1414, 111, 1402, 140, 1414, 173, 1420, 181, 1399, 337, 1404, 337, 1422, 441, 1430, 469, 1456, 472, 1666, 472, 1702, 453, 1721, 378, 1721, 370, 1749, 124, 1749, 96, 1726, 96, 1708, 49, 1702, 26, 1684, 33, 1448)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_83him"]
+polygon = PackedVector2Array(1447, 1868, 1670, 1871, 1673, 1848, 1823, 1855, 1823, 2185, 1574, 2187, 1579, 2094, 1447, 2099)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Building 1" type="TextureRect" parent="."]
+offset_left = 1337.0
+offset_top = 1754.0
+offset_right = 1924.0
+offset_bottom = 2286.0
+texture = ExtResource("1_kss5x")
+expand_mode = 1
+
+[node name="Building 2" type="TextureRect" parent="."]
+offset_left = 807.0
+offset_top = 721.0
+offset_right = 1181.0
+offset_bottom = 952.0
+texture = ExtResource("2_8yano")
+expand_mode = 1
+
+[node name="Building 4" type="TextureRect" parent="."]
+offset_left = 1422.0
+offset_top = 1362.0
+offset_right = 1813.0
+offset_bottom = 1747.0
+texture = ExtResource("3_d6dgv")
+expand_mode = 1
+
+[node name="Building 5" type="TextureRect" parent="."]
+offset_left = -40.0
+offset_top = 1373.0
+offset_right = 560.0
+offset_bottom = 1771.0
+texture = ExtResource("4_h70qh")
+expand_mode = 1
+
+[node name="Building 6" type="TextureRect" parent="."]
+offset_left = 20.0
+offset_top = 1816.0
+offset_right = 485.0
+offset_bottom = 2245.0
+texture = ExtResource("5_r02kg")
+expand_mode = 1
+
+[node name="Building 7" type="TextureRect" parent="."]
+offset_left = 261.0
+offset_top = 964.0
+offset_right = 706.0
+offset_bottom = 1178.0
+texture = ExtResource("6_6fsc5")
+expand_mode = 1
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_p7cra")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_hwck0")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_tuscp")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_u0dq1")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_7gk35")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_83him")

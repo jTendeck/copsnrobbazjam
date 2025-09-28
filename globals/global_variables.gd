@@ -69,6 +69,7 @@ func add_player(player: JtPlayer):
 		robbers[player.name] = player
 	if (player.player_type == GlobalVariables.PlayerType.POLICE):
 		police[player.name] = player
+	SignalManager.player_joined_success.emit()
 	if (all_players.size() >= MAX_PLAYERS):
 		SignalManager.max_players_joined.emit()
 		

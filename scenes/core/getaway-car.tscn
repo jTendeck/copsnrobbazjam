@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1tthywsskt55"]
+[gd_scene load_steps=5 format=3 uid="uid://d1tthywsskt55"]
 
 [ext_resource type="Texture2D" uid="uid://truxq4o3j1rb" path="res://assets/sprites/car.png" id="1_1wvcd"]
 
@@ -7,6 +7,9 @@ size = Vector2(224, 118)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3j5ch"]
 radius = 232.106
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1wvcd"]
+polygon = PackedVector2Array(-116, -64, -116, -37, -116, 4, -118, 62, -109, 65, -55, 61, 10, 63, 82, 62, 116, 63, 118, 56, 118, -6, 119, -62, 113, -64, 62, -64, 25, -63, -25, -62, -71, -63, -107, -62)
 
 [node name="Getaway-car" type="Area2D"]
 collision_layer = 128
@@ -25,3 +28,6 @@ shape = SubResource("RectangleShape2D_inyty")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3j5ch")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_1wvcd")

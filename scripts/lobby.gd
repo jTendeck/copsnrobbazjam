@@ -6,6 +6,9 @@ extends Control
 @onready var player_join_label = $Panel/PlayerJoinLabel
 @onready var refresh_button = $Panel/RefreshButton
 
+@onready var player_join_text = $Panel/PlayerJoinLabel
+@onready var start_btn : Button = $Panel/VSplitContainer/StartButton
+
 @onready var refresh_sound = $RefreshSound
 @onready var button_sound = $ButtonSound
 
@@ -13,6 +16,13 @@ extends Control
 @onready var joined_game_scene = load("res://scenes/main.tscn").instantiate()
 var is_hosting = false
 
+@export var level : JtLevel
+
+
+func _ready() -> void:
+	SignalManager.player_joined_success.connect(_on_player_joined_success)
+	SignalManager.player_disconnected.connect(_on_player_disconnect)
+	
 
 func _on_host_game_check_box_toggled(toggled_on: bool) -> void:
 	
@@ -65,8 +75,6 @@ func generate_text(length: int) -> String:
 
 
 func _on_refresh_button_pressed() -> void:
-	
-	
 	if refresh_button.visible:
 		
 		refresh_sound.play()
@@ -107,3 +115,19 @@ func _on_button_pressed() -> void:
 
 func _on_button_button_down() -> void:
 	button_sound.play()
+	
+	
+func _on_player_disconnect(_int: int):
+	player_join_text.text = "Players: " + str(GlobalVariables.all_players.size()) + "/" + str(GlobalVariables.MAX_PLAYERS)
+	if (!GlobalVariables.game_can_start):
+		start_btn.visible = false
+
+func _on_player_joined_success():
+	player_join_text.text = "Players: " + str(GlobalVariables.all_players.size()) + "/" + str(GlobalVariables.MAX_PLAYERS)
+	if (GlobalVariables.game_can_start):
+		start_btn.visible = true
+
+
+func _on_start_button_pressed():
+	level.start_match()
+	

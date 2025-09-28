@@ -24,6 +24,7 @@ offset_right = 1943.0
 offset_bottom = 1110.0
 
 [node name="HostGameCheckBox" type="CheckBox" parent="Panel"]
+visible = false
 layout_mode = 2
 offset_left = 831.0
 offset_top = 341.0
@@ -44,6 +45,7 @@ offset_bottom = 665.0
 split_offset = 70
 
 [node name="HSplitContainer" type="HSplitContainer" parent="Panel/VSplitContainer"]
+visible = false
 layout_mode = 2
 split_offset = 364
 
@@ -71,6 +73,14 @@ focus_mode = 0
 theme_override_fonts/font = ExtResource("2_efll3")
 theme_override_font_sizes/font_size = 48
 text = "Join Game"
+icon_alignment = 1
+
+[node name="StartButton" type="Button" parent="Panel/VSplitContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_efll3")
+theme_override_font_sizes/font_size = 48
+text = "Start"
 icon_alignment = 1
 
 [node name="PlayerJoinLabel" type="RichTextLabel" parent="Panel"]
@@ -106,4 +116,5 @@ max_polyphony = 5
 [connection signal="text_changed" from="Panel/VSplitContainer/HSplitContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="button_down" from="Panel/VSplitContainer/Button" to="." method="_on_button_button_down"]
 [connection signal="pressed" from="Panel/VSplitContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/VSplitContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Panel/RefreshButton" to="." method="_on_refresh_button_pressed"]

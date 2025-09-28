@@ -2,10 +2,12 @@ extends Node2D
 
 @onready var buttonSound = $click
 
+
 @onready var lobby_menu = preload("res://scenes/ui/lobby.tscn")
 
-func _ready() -> void:
-	pass
+
+
+
 
 
 func _on_play_button_down() -> void:
@@ -25,3 +27,7 @@ func _on_quit_button_up() -> void:
 
 func _on_quit_button_down() -> void:
 	buttonSound.play()
+
+
+		
+

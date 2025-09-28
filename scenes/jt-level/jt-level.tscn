@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dbvi8xerqt8sb"]
 
-[ext_resource type="Script" uid="uid://dmf3mwt7fi8oy" path="res://scenes/jt-level/jt_level.gd" id="1_apduk"]
+[ext_resource type="Script" uid="uid://dmf3mwt7fi8oy" path="res://assets/sprites/jt_level.gd" id="1_apduk"]
 [ext_resource type="PackedScene" uid="uid://cq1lv3ipkuep4" path="res://scenes/jt-player/jt_robber.tscn" id="1_pm0wv"]
 [ext_resource type="PackedScene" uid="uid://dqt76n1duuxlr" path="res://scenes/jt-player/jt_police.tscn" id="2_1xnw6"]
 [ext_resource type="PackedScene" uid="uid://xcu3oc435ybi" path="res://scenes/core/money_bag.tscn" id="3_ayujx"]
@@ -20,5 +20,8 @@ rotation = -0.63879
 
 [node name="JtRobber" parent="." instance=ExtResource("1_pm0wv")]
 position = Vector2(807, 504)
+
+[node name="JtPolice" parent="." instance=ExtResource("2_1xnw6")]
+position = Vector2(1536, 490)
 
 [connection signal="tree_exiting" from="MoneyBag" to="." method="_on_money_bag_tree_exiting"]
