@@ -12,6 +12,7 @@ var timer = Timer
 
 func _ready() -> void:
 	
+	#this  is gross
 	if GlobalVariables.current_player_number < 4:
 		
 		score_ui_p4.visible = false
@@ -38,8 +39,8 @@ func _on_timer_timeout() -> void:
 	GlobalVariables.global_time -= 1
 	countdown.update_label()
 	
-	GlobalVariables.player_scores[0] += GlobalVariables.point_values["second"]
-	GlobalVariables.player_scores[2] += GlobalVariables.point_values["second"]
+	GlobalVariables.players[0].score += GlobalVariables.point_values["second"]
+	GlobalVariables.players[2].score += GlobalVariables.point_values["second"]
 	
 	score_ui_p1.update_score()
 	score_ui_p3.update_score()
