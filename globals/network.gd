@@ -5,7 +5,7 @@ extends Node
 signal player_connected(id)
 signal player_disconnected(id)
 
-const IP_ADDRESS : String = "127.0.0.1" # TODO need to get this dynamically
+const IP_ADDRESS : String = "localhost" # TODO need to get this dynamically
 const PORT: int = 12000
 #1883
 
