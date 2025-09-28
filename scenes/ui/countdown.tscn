@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7k4bax1uke1a"]
+
+[ext_resource type="Script" uid="uid://beuwcrdiweooj" path="res://scripts/countdown.gd" id="1_pkq0j"]
+[ext_resource type="FontFile" uid="uid://cc8way58njw0x" path="res://assets/fonts/F25_Bank_Printer.ttf" id="2_fw4rc"]
+
+[node name="Countdown" type="Node2D"]
+script = ExtResource("1_pkq0j")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 291.0
+offset_bottom = 69.0
+theme_override_fonts/normal_font = ExtResource("2_fw4rc")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "00:00"
+fit_content = true
+autowrap_mode = 0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=3 uid="uid://dc6u4ps0lybw7"]
+
+[ext_resource type="Script" uid="uid://cix5nyv8rjygg" path="res://scripts/lobby.gd" id="1_6oakf"]
+[ext_resource type="StyleBox" uid="uid://bad845jm2uoxr" path="res://assets/ui/new_style_box_flat.tres" id="1_bthuv"]
+[ext_resource type="FontFile" uid="uid://cc8way58njw0x" path="res://assets/fonts/F25_Bank_Printer.ttf" id="2_efll3"]
+[ext_resource type="Texture2D" uid="uid://da11osjds30xj" path="res://assets/images/refresh_icon.png" id="3_5t5el"]
+[ext_resource type="AudioStream" uid="uid://dqf4styybksmx" path="res://assets/sound/sfx/basic_button_sound.mp3" id="4_2rbxb"]
+[ext_resource type="AudioStream" uid="uid://cyondyc4n0f0x" path="res://assets/sound/sfx/refresh_sound.wav" id="5_rqagm"]
+
+[sub_resource type="Theme" id="Theme_5t5el"]
+CheckBox/styles/focus = ExtResource("1_bthuv")
+
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5t5el")
+script = ExtResource("1_6oakf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1943.0
+offset_bottom = 1110.0
+
+[node name="HostGameCheckBox" type="CheckBox" parent="Panel"]
+layout_mode = 2
+offset_left = 831.0
+offset_top = 341.0
+offset_right = 1078.0
+offset_bottom = 399.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_efll3")
+theme_override_font_sizes/font_size = 32
+action_mode = 0
+text = "Host Game"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 668.0
+offset_top = 467.0
+offset_right = 1248.0
+offset_bottom = 665.0
+split_offset = 70
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Panel/VSplitContainer"]
+layout_mode = 2
+split_offset = 364
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VSplitContainer/HSplitContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_efll3")
+theme_override_font_sizes/normal_font_size = 48
+text = "Enter Code:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VSplitContainer/HSplitContainer"]
+layout_mode = 2
+focus_mode = 1
+theme_override_fonts/font = ExtResource("2_efll3")
+theme_override_font_sizes/font_size = 47
+placeholder_text = "123ABC"
+max_length = 6
+emoji_menu_enabled = false
+caret_blink = true
+
+[node name="Button" type="Button" parent="Panel/VSplitContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_efll3")
+theme_override_font_sizes/font_size = 48
+text = "Join Game"
+icon_alignment = 1
+
+[node name="PlayerJoinLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 2
+offset_left = 820.0
+offset_top = 691.0
+offset_right = 1194.0
+offset_bottom = 836.0
+theme_override_fonts/normal_font = ExtResource("2_efll3")
+theme_override_font_sizes/normal_font_size = 32
+text = "Players: 1/4"
+
+[node name="RefreshButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1259.0
+offset_top = 451.0
+offset_right = 1395.0
+offset_bottom = 621.0
+scale = Vector2(0.56, 0.56)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(0.531051, 0.531051, 0.531051, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+icon = ExtResource("3_5t5el")
+flat = true
+icon_alignment = 1
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2rbxb")
+max_polyphony = 5
+
+[node name="RefreshSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rqagm")
+
+[connection signal="toggled" from="Panel/HostGameCheckBox" to="." method="_on_host_game_check_box_toggled"]
+[connection signal="text_changed" from="Panel/VSplitContainer/HSplitContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="button_down" from="Panel/VSplitContainer/Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="Panel/VSplitContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/RefreshButton" to="." method="_on_refresh_button_pressed"]

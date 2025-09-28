@@ -1,64 +1,121 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn1qxfjkkvspi"]
+[gd_scene load_steps=6 format=3 uid="uid://cbbfpylemd7j3"]
 
-[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_c8enf"]
-[ext_resource type="Script" path="res://scenes/ui/quit_button.gd" id="1_ph80j"]
-[ext_resource type="FontFile" uid="uid://rpbgfy40kyto" path="res://assets/fonts/Warnet-Crime.ttf" id="2_oxtcp"]
-[ext_resource type="Script" path="res://scenes/ui/play_button.gd" id="3_oxtcp"]
-[ext_resource type="FontFile" uid="uid://c3jcvj2kr0u5b" path="res://assets/fonts/DitherByte-Regular.ttf" id="4_f0x07"]
-[ext_resource type="AudioStream" uid="uid://do8vays7ykq4p" path="res://assets/sound/sfx/ui_sound.mp3" id="6_6rc6a"]
+[ext_resource type="Script" uid="uid://dwm44fh5652tk" path="res://scripts/main_menu.gd" id="1_6rc6a"]
+[ext_resource type="Texture2D" uid="uid://dbqragtoms63w" path="res://assets/images/Heat_Street_Title_Screen_Screenshot.png" id="1_j3ryx"]
+[ext_resource type="AudioStream" uid="uid://dqf4styybksmx" path="res://assets/sound/sfx/basic_button_sound.mp3" id="3_oxtcp"]
+[ext_resource type="AudioStream" uid="uid://d3e7ytr57uhnl" path="res://assets/sound/music/Menu_Music.mp3" id="5_f0x07"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxtcp"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Node2D"]
-script = ExtResource("1_c8enf")
+script = ExtResource("1_6rc6a")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = -49.0
-offset_top = -60.0
-offset_right = 1186.0
-offset_bottom = 683.0
+offset_right = 1929.0
+offset_bottom = 1106.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oxtcp")
 
-[node name="QuitButton" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 483.0
-offset_top = 592.0
-offset_right = 715.0
-offset_bottom = 662.0
-theme_override_fonts/font = ExtResource("2_oxtcp")
-theme_override_font_sizes/font_size = 26
-text = "Quit
-"
-script = ExtResource("1_ph80j")
-metadata/_edit_use_anchors_ = true
+[node name="Bckgrnd_img" type="Sprite2D" parent="Panel"]
+position = Vector2(964, 557)
+scale = Vector2(1.36523, 1.08008)
+texture = ExtResource("1_j3ryx")
 
-[node name="PlayButton" type="Button" parent="Panel"]
+[node name="Play" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 454.0
-offset_top = 499.0
-offset_right = 742.0
-offset_bottom = 583.0
-theme_override_fonts/font = ExtResource("2_oxtcp")
-theme_override_font_sizes/font_size = 31
+offset_left = 24.0
+offset_top = 594.0
+offset_right = 231.0
+offset_bottom = 695.0
+theme_override_font_sizes/font_size = 41
 text = "Play
 "
-script = ExtResource("3_oxtcp")
-metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Quit" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 98.0
-offset_right = 1203.0
-offset_bottom = 412.0
-theme_override_fonts/font = ExtResource("4_f0x07")
-theme_override_font_sizes/font_size = 76
-text = "Copz n Robbaz"
+offset_left = 1668.0
+offset_top = 616.0
+offset_right = 1875.0
+offset_bottom = 717.0
+theme_override_font_sizes/font_size = 41
+text = "Quit
+"
+
+[node name="Liam" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 61.0
+offset_right = 213.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 29
+text = "Liam"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_6rc6a")
+[node name="Jonah" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 139.0
+offset_right = 216.0
+offset_bottom = 196.0
+theme_override_font_sizes/font_size = 29
+text = "Jonah"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="button_up" from="Panel/QuitButton" to="." method="_on_quit_button_button_up"]
-[connection signal="pressed" from="Panel/QuitButton" to="Panel/QuitButton" method="_on_pressed"]
-[connection signal="button_up" from="Panel/PlayButton" to="." method="_on_play_button_button_up"]
-[connection signal="pressed" from="Panel/PlayButton" to="Panel/PlayButton" method="_on_pressed"]
+[node name="Chris" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 225.0
+offset_right = 221.0
+offset_bottom = 282.0
+theme_override_font_sizes/font_size = 29
+text = "Chris"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jackson" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1684.0
+offset_top = 94.0
+offset_right = 1880.0
+offset_bottom = 151.0
+theme_override_font_sizes/font_size = 29
+text = "Jackson"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Justin" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1680.0
+offset_top = 171.0
+offset_right = 1876.0
+offset_bottom = 228.0
+theme_override_font_sizes/font_size = 29
+text = "Justin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ezariah" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1688.0
+offset_top = 259.0
+offset_right = 1884.0
+offset_bottom = 316.0
+theme_override_font_sizes/font_size = 29
+text = "Ezariah"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oxtcp")
+playback_type = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_f0x07")
+autoplay = true
+
+[connection signal="button_down" from="Panel/Play" to="." method="_on_play_button_down"]
+[connection signal="button_up" from="Panel/Play" to="." method="_on_play_button_up"]
+[connection signal="button_down" from="Panel/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_up" from="Panel/Quit" to="." method="_on_quit_button_up"]
