@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://qnnv5e2twbeh"]
+
+[ext_resource type="PackedScene" uid="uid://bobwv0hvd6au7" path="res://scenes/particles/smoke.tscn" id="1_0tsf8"]
+[ext_resource type="Script" uid="uid://dagxixeyk4nbd" path="res://scenes/projectiles/molotov_explosion.gd" id="1_fl0ed"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fl0ed"]
+radius = 158.455
+
+[node name="MolotovExplosion" type="Area2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_fl0ed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fl0ed")
+
+[node name="Smoke" parent="." instance=ExtResource("1_0tsf8")]
+
+[node name="BurnTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="finished" from="Smoke" to="." method="_on_smoke_finished"]
+[connection signal="timeout" from="BurnTimer" to="." method="_on_burn_timer_timeout"]
