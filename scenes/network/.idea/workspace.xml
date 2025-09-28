@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d10f83fe-c617-4596-a481-f2f387e5b000" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/DitherByte-Base.ttf.import" beforeDir="false" afterPath="$PROJECT_DIR$/../../assets/fonts/DitherByte-Base.ttf.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/DitherByte-Fill.ttf.import" beforeDir="false" afterPath="$PROJECT_DIR$/../../assets/fonts/DitherByte-Fill.ttf.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/DitherByte-Regular.ttf.import" beforeDir="false" afterPath="$PROJECT_DIR$/../../assets/fonts/DitherByte-Regular.ttf.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/DitherByte-Shadow.ttf.import" beforeDir="false" afterPath="$PROJECT_DIR$/../../assets/fonts/DitherByte-Shadow.ttf.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/F25_Bank_Printer.ttf.import" beforeDir="false" afterPath="$PROJECT_DIR$/../../assets/fonts/F25_Bank_Printer.ttf.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/Warnet-Crime.ttf.import" beforeDir="false" afterPath="$PROJECT_DIR$/../../assets/fonts/Warnet-Crime.ttf.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/sound/music/maze.mp3.import" beforeDir="false" afterPath="$PROJECT_DIR$/../../assets/sound/music/maze.mp3.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/sprites/fow-bg-test.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/../../assets/sprites/fow-bg-test.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/sprites/fow-fov-light-texture.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/../../assets/sprites/fow-fov-light-texture.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/sprites/fow-wall-test.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/../../assets/sprites/fow-wall-test.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../icon.svg.import" beforeDir="false" afterPath="$PROJECT_DIR$/../../icon.svg.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/../../project.godot" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="33JE73I7yh62qJ31n8yw7tLmujL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d10f83fe-c617-4596-a481-f2f387e5b000" name="Changes" comment="" />
+      <created>1759026603672</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759026603672</updated>
+      <workItem from="1759026605302" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
