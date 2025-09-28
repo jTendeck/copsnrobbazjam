@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://xcu3oc435ybi"]
+
+[ext_resource type="Script" uid="uid://mi2561ljmwgu" path="res://scenes/core/money_bag.gd" id="1_1ocf1"]
+[ext_resource type="Texture2D" uid="uid://cmsnv637xo072" path="res://assets/sprites/moneybag.png" id="1_eetjy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ocf1"]
+radius = 105.019
+
+[node name="MoneyBag" type="Area2D"]
+collision_layer = 64
+collision_mask = 128
+script = ExtResource("1_1ocf1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eetjy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1ocf1")
+
+[node name="WinTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="timeout" from="WinTimer" to="." method="_on_win_timer_timeout"]

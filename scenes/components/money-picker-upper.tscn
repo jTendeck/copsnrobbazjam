@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1ulpdj67b0do"]
+
+[ext_resource type="Script" uid="uid://c8e8so1wfa35v" path="res://scenes/components/money_picker_upper.gd" id="1_nkonf"]
+
+[node name="Money-picker-upper" type="Area2D"]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("1_nkonf")
+
+[node name="PickupTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="timeout" from="PickupTimer" to="." method="_on_pickup_timer_timeout"]
