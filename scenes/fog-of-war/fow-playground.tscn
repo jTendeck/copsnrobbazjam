@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dc8pj0pgrfaa7"]
+
+[ext_resource type="Texture2D" uid="uid://hfcoh7x5ra08" path="res://assets/sprites/fow-bg-test.png" id="1_au7ri"]
+[ext_resource type="PackedScene" uid="uid://c27w2cdaho7ap" path="res://scenes/fog-of-war/fow-wall.tscn" id="3_aygct"]
+[ext_resource type="Texture2D" uid="uid://yj312mooarud" path="res://icon.svg" id="4_olriu"]
+
+[sub_resource type="Gradient" id="Gradient_8cvs5"]
+offsets = PackedFloat32Array(0, 0.703041)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aygct"]
+gradient = SubResource("Gradient_8cvs5")
+width = 1500
+height = 1500
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_olriu"]
+light_mode = 2
+
+[node name="Fow-playground" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(972.5, 541)
+scale = Vector2(61.7813, 34.8125)
+texture = ExtResource("1_au7ri")
+
+[node name="Wall1" parent="." instance=ExtResource("3_aygct")]
+position = Vector2(690, 356)
+
+[node name="Wall2" parent="." instance=ExtResource("3_aygct")]
+position = Vector2(689, 766)
+
+[node name="Player1" type="Sprite2D" parent="."]
+position = Vector2(266, 539)
+texture = ExtResource("4_olriu")
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Player1"]
+energy = 0.43
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_aygct")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_olriu")
+position = Vector2(880, 648)
+texture = ExtResource("4_olriu")

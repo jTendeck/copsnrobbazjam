@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://qv2k131ffroo"]
+
+[ext_resource type="PackedScene" uid="uid://bltubbetwfaih" path="res://scenes/network/basic_network_ui.tscn" id="1_dwygo"]
+[ext_resource type="Texture2D" uid="uid://hfcoh7x5ra08" path="res://assets/sprites/fow-bg-test.png" id="1_rl2cl"]
+[ext_resource type="Script" uid="uid://coeg1bfe3k1j4" path="res://scenes/network/multiplayer_spawner.gd" id="2_0ltwk"]
+[ext_resource type="PackedScene" uid="uid://dea8embamdeuq" path="res://scenes/fog-of-war/fow-player-test.tscn" id="3_0ltwk"]
+[ext_resource type="PackedScene" uid="uid://c27w2cdaho7ap" path="res://scenes/fog-of-war/fow-wall.tscn" id="5_x7tpl"]
+
+[node name="NetworkPlayground" type="Node"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(957, 548.5)
+scale = Vector2(60.8125, 35.2813)
+texture = ExtResource("1_rl2cl")
+metadata/_edit_lock_ = true
+
+[node name="BasicNetworkUi" parent="." instance=ExtResource("1_dwygo")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://dea8embamdeuq")
+spawn_path = NodePath("..")
+script = ExtResource("2_0ltwk")
+network_player = ExtResource("3_0ltwk")
+
+[node name="Wall1" parent="." instance=ExtResource("5_x7tpl")]
+position = Vector2(400, 742)
+
+[node name="Wall2" parent="." instance=ExtResource("5_x7tpl")]
+position = Vector2(620, 202)

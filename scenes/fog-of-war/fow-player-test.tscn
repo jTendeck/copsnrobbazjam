@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dea8embamdeuq"]
+
+[ext_resource type="Script" uid="uid://c3bk8p3fb2rln" path="res://scenes/fog-of-war/fow_player_test.gd" id="1_bqvpl"]
+[ext_resource type="Texture2D" uid="uid://yj312mooarud" path="res://icon.svg" id="2_fisqu"]
+[ext_resource type="PackedScene" uid="uid://dftlfe5ueqlwe" path="res://scenes/fog-of-war/fow-visibility.tscn" id="3_fisqu"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6t866"]
+light_mode = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t866"]
+size = Vector2(130, 130)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bqvpl"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Fow-player-test" type="CharacterBody2D"]
+script = ExtResource("1_bqvpl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_6t866")
+texture = ExtResource("2_fisqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6t866")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_bqvpl")
+
+[node name="Visibility" parent="." instance=ExtResource("3_fisqu")]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkavj7y5xtmin"]
+
+[ext_resource type="Script" uid="uid://duhpyfamg7vlu" path="res://scenes/ui/pause_menu.gd" id="1_6tw0m"]
+[ext_resource type="AudioStream" uid="uid://c6a6ntntawmrs" path="res://assets/sound/sfx/basic_button_sound.mp3" id="2_0lmf7"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6tw0m")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1931.0
+offset_bottom = 1088.0
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 401.0
+offset_right = 1104.0
+offset_bottom = 657.0
+split_offset = 135
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VSplitContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 60
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Panel/VSplitContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 60
+text = "Resume"
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_0lmf7")
+
+[connection signal="button_down" from="Panel/VSplitContainer/ResumeButton" to="." method="_on_resume_button_button_down"]
+[connection signal="button_up" from="Panel/VSplitContainer/ResumeButton" to="." method="_on_resume_button_button_up"]
+[connection signal="pressed" from="Panel/VSplitContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
