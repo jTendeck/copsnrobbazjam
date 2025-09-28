@@ -11,6 +11,13 @@ script = ExtResource("1_o5qli")
 [node name="Jt-level" parent="." instance=ExtResource("6_tefeu")]
 position = Vector2(427, 182)
 
+[node name="Camera2D" parent="Jt-level/JtRobber" index="8"]
+position = Vector2(269, 95)
+limit_left = 0
+limit_top = 0
+limit_right = 4500
+limit_bottom = 5750
+
 [node name="MoneyBag" parent="Jt-level" index="1"]
 position = Vector2(1165, 277)
 
@@ -21,8 +28,11 @@ rotation = -1.66277
 
 [node name="tilemap" parent="Jt-level" instance=ExtResource("7_o6xl0")]
 z_index = -2
-position = Vector2(-427, -180)
+position = Vector2(-439, -172)
 scale = Vector2(2.48, 2.48)
+
+[node name="TileMap" parent="Jt-level/tilemap" index="0"]
+position = Vector2(3.62903, -7.25807)
 
 [node name="money_spawns" type="Node2D" parent="Jt-level/tilemap"]
 
@@ -88,10 +98,10 @@ metadata/player_num = 2
 metadata/player_num = 3
 
 [node name="ScoreUIP4" parent="UiOverlay/CanvasLayer/Scores" index="3"]
-offset_left = 1754.0
-offset_top = 54.0
-offset_right = 1754.0
-offset_bottom = 54.0
+offset_left = 1782.0
+offset_top = 60.0
+offset_right = 1782.0
+offset_bottom = 60.0
 metadata/player_num = 4
 
 [editable path="Jt-level"]
