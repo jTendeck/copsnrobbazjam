@@ -17,3 +17,5 @@ data_*/
 mono_crash.*.json
 
 .idea/
+assets/sprites/fow-wall-test.png.import
+*.import

@@ -1,16 +1,48 @@
+# network.gd
 extends Node
 
-const IP_ADDRESS : String = "localhost" # TODO need to get this dynamically
-const PORT: int = 6346
+# Add signals to notify other parts of your game
+signal player_connected(id)
+signal player_disconnected(id)
+
+const IP_ADDRESS : String = "127.0.0.1" # TODO need to get this dynamically
+const PORT: int = 12000
+#1883
 
 var peer : ENetMultiplayerPeer
 
+# Called when the node is added to the scene
+func _ready():
+	# Connect to multiplayer signals
+	multiplayer.peer_connected.connect(_on_peer_connected)
+	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
+
 func start_server() -> void:
 	peer = ENetMultiplayerPeer.new()
-	peer.create_server(PORT)
+	var error = peer.create_server(PORT)
+	if error != OK:
+		print("Failed to create server.")
+		return
 	multiplayer.multiplayer_peer = peer
-	
+	print("Server started on port: ", PORT)
+	# The server itself is a "player"
+	emit_signal("player_connected", 1) # The server always has an ID of 1
+
 func start_client() -> void:
 	peer = ENetMultiplayerPeer.new()
-	peer.create_client(IP_ADDRESS, PORT)
+	var error = peer.create_client(IP_ADDRESS, PORT)
+	if error != OK:
+		print("Failed to create client.")
+		return
 	multiplayer.multiplayer_peer = peer
+	print("Client started, connecting to: ", IP_ADDRESS)
+
+# --- Signal Callbacks ---
+
+func _on_peer_connected(id: int):
+	print(str(id), " connected.")
+	emit_signal("player_connected", id)
+
+func _on_peer_disconnected(id: int):
+	print(str(id), " disconnected.")
+	emit_signal("player_disconnected", id)

@@ -29,3 +29,4 @@ shape = SubResource("RectangleShape2D_6t866")
 replication_config = SubResource("SceneReplicationConfig_bqvpl")
 
 [node name="Visibility" parent="." instance=ExtResource("3_fisqu")]
+position = Vector2(35, 33)
