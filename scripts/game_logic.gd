@@ -29,7 +29,7 @@ func _ready() -> void:
 	
 	###TIMER CODE###
 	timer = Timer.new()
-	timer.wait_time = 1.0
+	timer.wait_time = 0.1
 	timer.one_shot = false
 	add_child(timer)
 
@@ -46,7 +46,7 @@ func _input(event: InputEvent) -> void:
 		get_tree().paused = true
 	
 func _on_timer_timeout() -> void:
-	GlobalVariables.global_time -= 1
+	GlobalVariables.global_time -= 0.1
 	countdown.update_label()
 	
 	GlobalVariables.players[0].score += GlobalVariables.point_values["second"]

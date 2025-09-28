@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://mpwbrntrd0gf"]
+[gd_scene load_steps=3 format=3 uid="uid://snk0erg0ddjo"]
 
-[ext_resource type="Script" path="res://scripts/countdown.gd" id="1_pkq0j"]
+[ext_resource type="Script" uid="uid://cttn22i8qjm50" path="res://scripts/countdown.gd" id="1_pkq0j"]
 [ext_resource type="FontFile" uid="uid://cc8way58njw0x" path="res://assets/fonts/F25_Bank_Printer.ttf" id="2_fw4rc"]
 
 [node name="Countdown" type="Node2D"]
