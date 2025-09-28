@@ -28,3 +28,13 @@ class Player:
 	
 	func _init(_is_robber: bool) -> void:
 		is_robber = _is_robber
+
+
+
+class Treaure:
+	
+	var value = 200
+
+	var position = Vector2(0,0)
+	
+	var seconds_to_recieve = 5
