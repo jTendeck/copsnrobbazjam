@@ -5,6 +5,7 @@ var timer = Timer
 @onready var countdown = $Countdown
 
 @onready var game_over_screen = load("res://scenes/ui/Game_over.tscn").instantiate()
+@onready var pause_menu = $PauseMenu
 
 @onready var score_ui_p1 = $ScoreUIP1
 @onready var score_ui_p2 = $ScoreUIP2
@@ -13,6 +14,8 @@ var timer = Timer
 
 
 func _ready() -> void:
+	
+	pause_menu.visible = false
 	
 	#this  is gross
 	if GlobalVariables.current_player_number < 4:
@@ -36,6 +39,11 @@ func _ready() -> void:
 	################
 	
 	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		
+		pause_menu.visible = true
+		get_tree().paused = true
 	
 func _on_timer_timeout() -> void:
 	GlobalVariables.global_time -= 1

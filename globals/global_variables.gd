@@ -31,7 +31,7 @@ class Player:
 
 
 
-class Treaure:
+class Treasure:
 	
 	var value = 200
 
