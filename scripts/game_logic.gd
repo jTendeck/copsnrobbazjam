@@ -4,6 +4,8 @@ var timer = Timer
 
 @onready var countdown = $Countdown
 
+@onready var game_over_screen = load("res://scenes/ui/Game_over.tscn").instantiate()
+
 @onready var score_ui_p1 = $ScoreUIP1
 @onready var score_ui_p2 = $ScoreUIP2
 @onready var score_ui_p3 = $ScoreUIP3
@@ -48,3 +50,14 @@ func _on_timer_timeout() -> void:
 	
 	if GlobalVariables.global_time <= 0:
 		timer.stop()
+		get_tree().root.add_child(game_over_screen)
+		get_tree().current_scene.queue_free()
+		get_tree().current_scene = game_over_screen
+
+func _on_player_hit(player: GlobalVariables.Player, damage: int) -> void:
+	
+	player.health -= damage
+	
+	if player.health <= 0:
+		#kill player
+		pass
