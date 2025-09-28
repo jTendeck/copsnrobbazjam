@@ -3,9 +3,13 @@ extends CharacterBody2D
 
 const SPEED = 600.0
 
+@onready var visibility_area : PointLight2D = $VisibilityArea
+
 
 func _ready() -> void:
 	set_multiplayer_authority(name.to_int())
+	if !is_multiplayer_authority():
+		visibility_area.visible = false
 
 
 func _physics_process(delta):
