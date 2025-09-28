@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://dwjmx331j0aul"]
+[gd_scene format=3 uid="uid://dwjmx331j0aul"]
 
 [node name="HealthBar" type="ProgressBar"]
 offset_right = 250.0

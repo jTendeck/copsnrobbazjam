@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cifeplhgx81ua"]
+
+[node name="PlaceholderJoinedLobby" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 502.0
+offset_top = 281.0
+offset_right = 735.0
+offset_bottom = 355.0
+text = "lobby joined :)"

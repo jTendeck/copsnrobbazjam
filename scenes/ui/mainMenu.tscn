@@ -1,14 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn1qxfjkkvspi"]
+[gd_scene load_steps=7 format=3 uid="uid://cbbfpylemd7j3"]
 
-[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_c8enf"]
-[ext_resource type="Script" path="res://scenes/ui/quit_button.gd" id="1_ph80j"]
+[ext_resource type="Script" uid="uid://dbgg7fowffe37" path="res://scripts/main_menu.gd" id="1_6rc6a"]
 [ext_resource type="FontFile" uid="uid://rpbgfy40kyto" path="res://assets/fonts/Warnet-Crime.ttf" id="2_oxtcp"]
-[ext_resource type="Script" path="res://scenes/ui/play_button.gd" id="3_oxtcp"]
+[ext_resource type="Script" uid="uid://cf0tha3l13guf" path="res://scripts/quit_button.gd" id="3_ceogi"]
+[ext_resource type="Script" uid="uid://h66f2no7wse" path="res://scripts/play_button.gd" id="4_5v4xd"]
 [ext_resource type="FontFile" uid="uid://c3jcvj2kr0u5b" path="res://assets/fonts/DitherByte-Regular.ttf" id="4_f0x07"]
 [ext_resource type="AudioStream" uid="uid://do8vays7ykq4p" path="res://assets/sound/sfx/ui_sound.mp3" id="6_6rc6a"]
 
 [node name="MainMenu" type="Node2D"]
-script = ExtResource("1_c8enf")
+script = ExtResource("1_6rc6a")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = -49.0
@@ -26,7 +26,7 @@ theme_override_fonts/font = ExtResource("2_oxtcp")
 theme_override_font_sizes/font_size = 26
 text = "Quit
 "
-script = ExtResource("1_ph80j")
+script = ExtResource("3_ceogi")
 metadata/_edit_use_anchors_ = true
 
 [node name="PlayButton" type="Button" parent="Panel"]
@@ -39,7 +39,7 @@ theme_override_fonts/font = ExtResource("2_oxtcp")
 theme_override_font_sizes/font_size = 31
 text = "Play
 "
-script = ExtResource("3_oxtcp")
+script = ExtResource("4_5v4xd")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel"]
