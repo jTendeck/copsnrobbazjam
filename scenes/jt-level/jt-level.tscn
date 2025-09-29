@@ -2,28 +2,67 @@
 
 [ext_resource type="Script" uid="uid://dmf3mwt7fi8oy" path="res://assets/sprites/jt_level.gd" id="1_apduk"]
 [ext_resource type="PackedScene" uid="uid://cq1lv3ipkuep4" path="res://scenes/jt-player/jt_robber.tscn" id="1_pm0wv"]
-[ext_resource type="PackedScene" uid="uid://dqt76n1duuxlr" path="res://scenes/jt-player/jt_police.tscn" id="2_1xnw6"]
+[ext_resource type="PackedScene" uid="uid://dc6u4ps0lybw7" path="res://scenes/ui/lobby.tscn" id="2_gl3s2"]
 [ext_resource type="PackedScene" uid="uid://xcu3oc435ybi" path="res://scenes/core/money_bag.tscn" id="3_ayujx"]
 [ext_resource type="PackedScene" uid="uid://d1tthywsskt55" path="res://scenes/core/getaway-car.tscn" id="4_efifl"]
 
 [node name="Jt-level" type="Node2D"]
 script = ExtResource("1_apduk")
-robber_scene = ExtResource("1_pm0wv")
-police_scene = ExtResource("2_1xnw6")
+robber_scene = ExtResource("2_gl3s2")
+police_scene = ExtResource("2_gl3s2")
 
-[node name="Camera2D" type="Camera2D" parent="JtRobber"]
+[node name="Lobby" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_gl3s2")]
+visible = false
+level = NodePath("..")
+
+[node name="Police" type="Node" parent="."]
+
+[node name="Robbers" type="Node" parent="."]
+
+[node name="PoliceSpawns" type="Node" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="PoliceSpawns"]
+position = Vector2(183, 58)
+
+[node name="Marker2D2" type="Marker2D" parent="PoliceSpawns"]
+position = Vector2(354, 116)
+
+[node name="Marker2D3" type="Marker2D" parent="PoliceSpawns"]
+position = Vector2(184, 204)
+
+[node name="Marker2D4" type="Marker2D" parent="PoliceSpawns"]
+position = Vector2(385, 268)
+
+[node name="RobberSpawns" type="Node" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="RobberSpawns"]
+position = Vector2(1496, 122)
+
+[node name="Marker2D2" type="Marker2D" parent="RobberSpawns"]
+position = Vector2(1667, 180)
+
+[node name="Marker2D3" type="Marker2D" parent="RobberSpawns"]
+position = Vector2(1497, 268)
+
+[node name="Marker2D4" type="Marker2D" parent="RobberSpawns"]
+position = Vector2(1698, 332)
 
 [node name="MoneyBag" parent="." instance=ExtResource("3_ayujx")]
-position = Vector2(1190, 498)
+position = Vector2(1555, 835)
 
 [node name="Getaway-car" parent="." instance=ExtResource("4_efifl")]
-position = Vector2(402, 879)
+position = Vector2(506, 783)
 rotation = -0.63879
 
 [node name="JtRobber" parent="." instance=ExtResource("1_pm0wv")]
-position = Vector2(807, 504)
+position = Vector2(789, 418)
 
-[node name="JtPolice" parent="." instance=ExtResource("2_1xnw6")]
-position = Vector2(1536, 490)
+[node name="MoneyBagSpawn" type="Marker2D" parent="."]
+position = Vector2(1655, 950)
+
+[node name="ResetTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
 
 [connection signal="tree_exiting" from="MoneyBag" to="." method="_on_money_bag_tree_exiting"]
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]

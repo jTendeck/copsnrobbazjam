@@ -219,7 +219,7 @@ func give_camera():
 			camera = null
 		camera = Camera2D.new()
 		camera.position_smoothing_enabled = true
-		camera.physics_interpolation_mode = PHYSICS_INTERPOLATION_MODE_ON
+		camera.process_callback = 0
 		if (camera_follow_pos != null):
 			camera_follow_pos.add_child(camera)
 		else:
